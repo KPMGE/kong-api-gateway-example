@@ -1,0 +1,37 @@
+version: "3.7"
+
+networks:
+  kong-net:
+    name: kong-net
+    driver: bridge
+
+services:
+  servicea:
+    build: ./services
+    environment:
+      PORT: ":8081"
+      CONTENT: "<h1>Service A</h1>"
+    networks:
+      - kong-net
+    ports:
+      - 8081:8081
+
+  serviceb:
+    build: ./services
+    environment:
+      PORT: ":8082"
+      CONTENT: "<h1>Service B</h1>"
+    networks:
+      - kong-net
+    ports:
+      - 8082:8082
+
+  servicec:
+    build: ./services
+    environment:
+      PORT: ":8083"
+      CONTENT: "<h1>Service C</h1>"
+    networks:
+      - kong-net
+    ports:
+      - 8083:8083
