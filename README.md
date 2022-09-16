@@ -9,8 +9,8 @@ the right service.
 
 ## How to run the project
 First of all, you gotta create a dedicated network for this project to work, basically, both our services 
-and kong itself will be in that network so that it's easy to manage the request coming back and fourth. You can 
-create such an network by running the command: 
+and kong itself will be in that network so that it's easy to manage the requests coming back and fourth. You can 
+create such a network by running the command: 
 
 ```bash
 sudo docker network create kong-net
